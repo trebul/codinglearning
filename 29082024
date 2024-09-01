@@ -1,0 +1,2 @@
+dneska jsem se naučil že záleží na struktuře projektu při vytváření protože ten spring boot při hledání např. @Component etc to prostě nemusí najít a pak to nefunguje takže main vždy musí bejt v root složce.
+Nicméně problém jsem nevyřešil
