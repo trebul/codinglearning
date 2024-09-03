@@ -15,7 +15,8 @@ rozdíl mezi integer a int:
         return studentRepository.save(student);
     }
 
-  //použití Intu
+  //použití Intu	
+  Integer myIntegerObject1 = new Integer(10);
   ```
 
 Interface je abstraktní třída ve který se jen definuje název metody a pak se v další třídě implementuje(příklad uveden nahoře)
