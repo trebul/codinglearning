@@ -10,7 +10,7 @@
 - requesty se značí @GetMapping,@PostMapping etc vždy za tím jsou závorky a v tom se může definovat ten endpoint
 pro vytváření relací:
 - @OneToOne
-- @OneToMany + @JoinColumn(name ='nazev_fk') + vytvořím si prázdný objekt dané třídy kde chci mít ten cizí klíč
+- ##### @OneToMany + @JoinColumn(name ='nazev_fk') + vytvořím si prázdný objekt dané třídy kde chci mít ten cizí klíč
 ```java
  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
  @JoinColumn(name = "teacher_id")
