@@ -17,8 +17,9 @@ pro vytváření relací:
  private List<Student> students;
   ```
 Db login se dává do application.properties nebo v případě hibernate se to dává do hibernate.cfg.xml
-`spring.datasource.url=jdbc:mysql://localhost:3306/dbname
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/dbname
 spring.datasource.username=name
 spring.datasource.password=password
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-`
+```
