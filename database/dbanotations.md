@@ -9,7 +9,14 @@
 - @RestController na vytváření web service, mělo by to být oddělený tedy budu mít studentController a adresaController
 - requesty se značí @GetMapping,@PostMapping etc vždy za tím jsou závorky a v tom se může definovat ten endpoint
 pro vytváření relací:
-- @OneToOne
+- ##### @OneToOne
+```java
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_fk")
+    private Address address;
+    //při requestu se nepíše název atributu - address_fk ale normálně se vytváří objekt adresy
+    // pro vložení jen id adresy je potřeba jiný přístup
+  ```
 - ##### @OneToMany + @JoinColumn(name ='nazev_fk') + vytvořím si prázdný objekt dané třídy kde chci mít ten cizí klíč
 ```java
  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
