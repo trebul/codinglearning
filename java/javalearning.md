@@ -18,6 +18,35 @@ rozdíl mezi integer a int:
   //použití Intu	
   Integer myIntegerObject1 = new Integer(10);
   ```
+#### Switch
+ve switchi nelze používat long, float, double nebo boolean
+fall through:
+  pokud case matchne tu hodnotu tak se provede všechno v tom casu až po break; - pokud tam break není tak to pokračuje dál skrz další casy (nevěděl jsem že tam jde nenapsat break tbh)
+- enhanced switch
+```java
+//klasickej switch
+case X:
+ //do něco
+ break;//nebo return
+
+//enhanced
+//taky jde
+return switch (value) {} //pak tohle jde přiřadit nějaký proměnný
+case X -> //do něco;
+//pokud se používá funkce v enhanced switchi tak místo return se používá
+yield value;
+return switch (month) {
+case "jan", "feb", "mar" -> "1st";
+case "apr", "may", "jun" -> "2nd";
+case "jul", "aug", "sep" -> "3rd";// 3rth haha
+case "oct", "nov", "dec" -> "4th";
+default -> {
+ String badResponse = "wrong month";
+ yield badResponse;
+}
+};
+```
+tohle je pro java > 14 btw
 
 #### Interface
 je abstraktní třída ve který se jen definuje název metody a pak se v další třídě implementuje(příklad uveden nahoře)
