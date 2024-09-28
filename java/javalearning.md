@@ -4,7 +4,7 @@ public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
 }
 ```
 
-rozdíl mezi integer a int:
+#### rozdíl mezi integer a int:
 - integer je lepší pokud se jedná o hodnoty mezi -128 až 127
 - metody který pracujou s objektama zásadně vyžadujou integer
 - integer se nedá porovnávat pomocí `==` a `!=`
@@ -18,6 +18,53 @@ rozdíl mezi integer a int:
   //použití Intu	
   Integer myIntegerObject1 = new Integer(10);
   ```
+#### :: syntaxe
+od javy 8 se dá referencovat metody přes :: místo volání. Je to pro lambda výrazy
+```
+//představ si že máš metodu
+public void print(String message) {
+        System.out.println(message);
+    }
+
+//normální volání print při procházení listu
+List<String> list = Arrays.asList("A", "B", "C");
+list.forEach(message -> obj.print(message));//volám metodu nad každým prvkem v listu
+
+//použití ::
+List<String> list = Arrays.asList("A", "B", "C");
+list.forEach(obj::print); //takhle to ví že nad každým prvkem to má použít metodu print aniž bych musel psát něco dalšího
+```
+### lambda výrazy
+v podstatě 
+parameter -> expression
+výrazy jsou limitované = musí hned vracet hodnotu, nemůžou obsahovat ify/fory apod.
+pokud je potřeba tam mít složitější operace pak je potřeba to dát do blocku
+
+(param1) -> {
+//do něco
+}
+```
+public void print(String message) {
+        System.out.println(message);
+    }
+
+//normální volání print při procházení listu
+List<String> list = Arrays.asList("A", "B", "C");
+list.forEach(message -> obj.print(message)); //takže tohle je lambda výraz
+```
+#### Optional<>
+optional znamená že to může ale nemusí obsahovat hodnoty
+```
+//například u metody findById se nemusí nic vracet takže tam se pak dá použít optional
+Optional<String> emptyString = Optional.empty();
+//optional pak má metodu isPresent() na zjištění jestli je nebo není null
+Optional<String> str = Optional.of("hello"); //pokud není hodnota null tak se dá použít of()
+if(str.isPresent()){
+ System.out.println("je tu");
+}
+//tohle printne je tu protože str = hello	
+```
+
 #### Switch
 ve switchi nelze používat long, float, double nebo boolean
 fall through:
@@ -90,3 +137,18 @@ zatím jen používám ten nejvíc basic
 private LubertRepository lubertRepository; 
 ```
 používá se to pokud je potřeba používat metody z třídy A ve třídě B.
+
+#### Mapstruct
+vytváří se interface nad kterým se napíše anotace @Mapper
+v něm se pak definují metody, které jsou automaticky generovány při mvn clean install
+pokud se jedná o vnořené objekty které nejsou v DTO třídě je potřeba je specifikovat
+je to ofc limited v tom kolik toho zná
+```
+@Mapper(componentModel = "spring")
+public interface StudentMapper {
+
+   @Mapping(source = "address", target = "addressDTO")
+   StudentDTO studentToStudentDTO(Student student);//jelikož třída StudentDTO nemá objekt address ale addressDTO tak se to musí specifikovat přes @Mappping source je z původního objektu a target je v tom novém objektu
+   Student toStudent(StudentDTO studentDTO);
+}
+```
