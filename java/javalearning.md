@@ -18,6 +18,25 @@ public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
   //použití Intu	
   Integer myIntegerObject1 = new Integer(10);
   ```
+#### Čtení dat z inputu
+- System.in
+  stejný jako system.out  čte data z konzole nebo terminálu
+- Sytem.console
+  přečte to jeden řádek ale spousta IDE to nepodporuje, lze použít pokud se spouští z terminálu
+  ```
+  String text = System.console().readLine("Čus dej text");
+  System.out.println(text + " tvůj text");
+  ```
+- Command line arguments
+  při spouštění programu přes terminál
+- Scanner
+  klasika pro začátečníky
+  ```
+  Scanner scanner = new Scanner(System.in); //musí se vytvořit instance scanneru nejdřív
+  System.out.println("jaký je tvoje jméno");
+  String name = scanner.nextLine();
+  System.out.println(name + " je tvoje jméno");
+  ```
 #### :: syntaxe
 od javy 8 se dá referencovat metody přes :: místo volání. Je to pro lambda výrazy
 ```
