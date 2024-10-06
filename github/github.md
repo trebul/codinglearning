@@ -9,3 +9,28 @@ git cherry-pick master~4 master~2 //tohle je 5 a 3 commit
 //drop - commit se dropne
 //keep - commit se nechává
 ```
+
+- squash commit
+znamená že se dá vzít několik commitů najednou a udělat z nich jeden
+```
+//třeba chci sloučit poslední 3 commity
+git rebase -i HEAD~3
+//použiju pick a pak squash
+pick commit1
+squash commit2
+squash commit3
+//když pak chci pushnout
+git push --force
+```
+
+- amend
+umožňuje upravit poslední commit bez potřeby vytvářet nový commit
+
+```
+//pokud chci jen upravit commit msg
+git commit --amend //tím se otevře editor kde můžu změnit poslední zprávu
+
+//pokud jsem zapomněl do commitu něco přidat
+git add <file>
+git commit --amend
+```
