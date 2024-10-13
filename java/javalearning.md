@@ -191,3 +191,20 @@ má dva významy
 
 1. schovat atributy a nebo metody
 2. spojit chování a atributy do jednoho objektu
+
+#### Constructory
+slouží k vytvoření objektu třídy
+dá se je chainovat tzn zavolat konstruktor s parametrama a nastavit defaultní hodnoty v jiným konstruktoru
+
+```
+public Student() {
+//chain musí být hned to první a slouží to k nastavení defaultních hodnot objektu
+this(1,15,"Karel");
+}
+
+public Student(int id, int age, String name){
+this.id = id;
+this.age = age;
+this.name = name;
+}
+```
