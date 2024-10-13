@@ -186,6 +186,8 @@ class Ishmoz {
 ```
 
 - Encapsulation
+
 má dva významy
+
 1. schovat atributy a nebo metody
 2. spojit chování a atributy do jednoho objektu
