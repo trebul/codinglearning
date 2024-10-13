@@ -175,3 +175,17 @@ public interface StudentMapper {
    Student toStudent(StudentDTO studentDTO);
 }
 ```
+#### Classy
+classa může bejt buď public nebo přístupná jen v tom package kde je
+```
+public class Ishmoz {
+}
+
+class Ishmoz {
+}
+```
+
+- Encapsulation
+má dva významy
+1. schovat atributy a nebo metody
+2. spojit chování a atributy do jednoho objektu
