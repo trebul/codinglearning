@@ -34,3 +34,28 @@ git commit --amend //tím se otevře editor kde můžu změnit poslední zprávu
 git add <file>
 git commit --amend
 ```
+
+- fetch
+získá updaty z nějakýho branche/repo ale člověk pak musí provést spojení (merge)
+```
+git fetch feature
+```
+
+- merge
+spojí soubory např pokud mám soubor student.js a při fetchi zjistím že byl student.js změněn tak provedu merge s cílovou větví(případně resolvnu konflikty) a soubor se mi aktualizuje
+```
+git merge feature
+```
+- pull
+kombinuje fetch a merge dohromady
+```
+git pull feature
+```
+- rebase
+  slouží k přesunu z jednoho branche na druhý a přepíše historii
+  
+```
+git rebase -i //interaktivní rebase umožňuje upravit commity(třeba je spojit/upravit)
+//lze rebasovat na nějaký jiný branch
+git rebase feature
+```
