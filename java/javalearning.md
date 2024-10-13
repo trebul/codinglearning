@@ -36,6 +36,10 @@ public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
   System.out.println("jaký je tvoje jméno");
   String name = scanner.nextLine();
   System.out.println(name + " je tvoje jméno");
+
+  //při použití scanner.NextInt(); metoda nejde na další řádek a musí se na další řádek manuálně
+  int numbr = scanner.NextInt();
+  scanner.nextLine();
   ```
 #### :: syntaxe
 od javy 8 se dá referencovat metody přes :: místo volání. Je to pro lambda výrazy
