@@ -208,3 +208,45 @@ this.age = age;
 this.name = name;
 }
 ```
+
+#### Reference vs Object vs Instance vs Class
+![image](https://github.com/user-attachments/assets/d1b2c85d-dd7b-45e3-a986-9ec1ac25b8a1)
+když si vytvářím objekt nějaký classy tak se tomu dá říkat instance
+a ta adresa kde ta instance je se nazývá reference
+reference se daj předávat jako parametry do konstruktorů a metod
+
+#### Static proměnný
+```
+static String name = "Karel;
+
+//imagine je to třeba v classe User
+//peší volat classu než volat instanci
+User.name //vrátí Karel
+
+//pokud ale třeba udělám
+static String surname;
+
+//zase classa User
+User userA = new User("kulbac");
+User userB = new User("Vopica");
+System.out.println(userA.surname);
+System.out.println(userB.surname);
+//oboje printne vopica protože to je static takže to nevytváří instance
+```
+#### Static vs Instance metody
+##### Static metody
+- nejde v nich používat this()
+- pokud jsou volaný ve stejný tříde tak se daj zavolat jen jako metoda(); místo třeba User.metoda();
+
+##### Instance metody
+- musí se nejdřív vytvořit instance
+- instance můžou taky přistupovat k statickejm metodám a proměnejm
+
+![image](https://github.com/user-attachments/assets/e3cdc6e2-0c36-4044-acaa-51bc76df7d4b)
+
+#### POJO
+plain old java object je třída která má většinou pouze instanční proměnný
+používá se to pro předávání dat mezi třídama a má to většinou jen pár metod kromě setterů a getterů
+taky se tomu dá říkat bean nebo JavaBean
+POJO se taky říká entity
+používá se to v DTO 
