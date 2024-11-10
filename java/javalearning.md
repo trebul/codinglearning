@@ -250,3 +250,51 @@ používá se to pro předávání dat mezi třídama a má to většinou jen p�
 taky se tomu dá říkat bean nebo JavaBean
 POJO se taky říká entity
 používá se to v DTO 
+
+#### Hashmapy
+
+```
+HashMap<String, Integer> items = new HashMap<>(); //znamená že String bude key a value bude integer
+items.put("Tatranka", 12345);
+items.put("Karlův nůž", 42069);
+
+items.get("Tatranka"); //vrátí 12345
+items.containsKey(); //vrací true/false pokud to je v hashmapě nebo není
+items.containsValue(); //stejný jen pro value místo klíče
+//pokud chci vložit key kterej už je v mapě tak se to updatuje
+
+items.replace("Karlův nůž", 0); //nahradí to
+
+//pokud replace nenajde prvek v mapě tak to nic neudělá
+//ale je tu
+items.putIfAbsent("Kolo", 2587);
+
+items.remove("Kolo");
+
+items.clear(); //obvious
+
+items.size();
+
+for(String i : items.keySet()) //jak procházet hashmapu
+//i obsahuje ten klíč takže na získání value se použije get
+items.get(i);
+```
+hashmapy nemaj stejný pořadí ve kterým jsem to vkládal, u hashmap je mi jedno na který pozici to je
+
+#### Hashtable
+![image](https://github.com/user-attachments/assets/42718dc9-d919-4ba7-85b0-245dbd830500)
+pokud jdou 2 páry na stejný index tak se z toho vytvoří z toho indexu vytvoří linkedlist <br />
+![image](https://github.com/user-attachments/assets/082ecabf-59cc-4202-9b47-3ece61661cff)
+<br /> a pak se prochází ten index, ale generally se preferuje aby každej měl vlastní index <br />
+každýmu indexu se taky říká bucket
+
+```
+HashTable<Integer, String> food = new HashTable<>(); //do () se dá nastavit velikost a load factor
+
+food.put(1, "Kebab");
+//metody jsou skoro stejný jako u HashMap
+//ale tohle má navíc metodu hashCode který vrací hash klíče  
+```
+jsou dobrý v tom, že se rychle vkládá, hledá a maže páry. <br />
+není to vhodný pro malý data sety ale pro velký to je banger <br />
+komplexita je O (1) v nejlepším případě a O (n) v nejhorším (pokud je tam hodně kolizí)
