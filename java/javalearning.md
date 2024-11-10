@@ -279,7 +279,8 @@ for(String i : items.keySet()) //jak procházet hashmapu
 //i obsahuje ten klíč takže na získání value se použije get
 items.get(i);
 ```
-hashmapy nemaj stejný pořadí ve kterým jsem to vkládal, u hashmap je mi jedno na který pozici to je
+hashmapy nemaj stejný pořadí ve kterým jsem to vkládal, u hashmap je mi jedno na který pozici to je <br />
+pokud je tam toho moc v tom linkedlistu tak se vytvoří balance tree (defaultně je 8)
 
 #### Hashtable
 ![image](https://github.com/user-attachments/assets/42718dc9-d919-4ba7-85b0-245dbd830500)
