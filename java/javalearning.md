@@ -373,4 +373,9 @@ potřeba napsat
 spring.profiles.active: test //v tomhle případě
 ```
 lze mít několik aktivních profilů ty další přepisou ten původní (vždycky se používá ten poslední definovanej)
+
 dá se přepsat aktivní profil v command line
+
+u tříd se dá definovat profil u kterejch se to používá (např databáze pro produkci a testování)
+
+@Profile("test") třeba (pokud to není specifikovaný tak se použije defaultní)
