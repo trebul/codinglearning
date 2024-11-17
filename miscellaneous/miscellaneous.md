@@ -53,3 +53,17 @@ tldr simplified Spring with default configs for small apps
 Spring is better for large applications where control is needed over the architecture, configuration and components
 
 Spring boot is better for standalone production-ready applications quickly espeically for smaller services/microservices.
+
+
+#### AOP (Aspect Oriented Programming)
+![image](https://github.com/user-attachments/assets/b851d48a-6c9b-4701-b543-12923775e0fc)
+rozdělený do layerů
+přes ty layery jsou pak "cross cutting concerns" který se skládaj z transaction managementu, logging, profiling a security (jsou tam i další ale tyhle jsoui nejdůležitější)
+
+Místo třídy se používá Aspect, kterej se zabývá jednou z těch věcí (transaction managentu, loggingu, profilingu a nebo security)
+
+důvod proč to dělat je protože se to rychle dá napsat a snadno se to reusuje + je tam vždycky focus na jeden aspect
+
+dá se je enablovat nebo disablovat
+
+nejpopulárnější knihovny jsou spring a aspectJ s tím že aspectJ funguje se springem
