@@ -299,3 +299,10 @@ food.put(1, "Kebab");
 jsou dobrý v tom, že se rychle vkládá, hledá a maže páry. <br />
 není to vhodný pro malý data sety ale pro velký to je banger <br />
 komplexita je O (1) v nejlepším případě a O (n) v nejhorším (pokud je tam hodně kolizí)
+
+
+#### Shallow vs Deep Copy
+![image](https://github.com/user-attachments/assets/40ad98bb-df33-453a-8287-fb3fbc941d91) <br />
+v podstatě pokud u shallow copy budu měnit adresu tak se ta změna projeví u obou objektů
+![image](https://github.com/user-attachments/assets/14193df7-98f3-47be-aa7d-6c108a462a94) <br />
+pokud budu měnit adresu tak se ta změna projeví pouze u prvního objektu
