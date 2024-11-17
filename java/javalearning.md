@@ -306,3 +306,71 @@ komplexita je O (1) v nejlepším případě a O (n) v nejhorším (pokud je tam
 v podstatě pokud u shallow copy budu měnit adresu tak se ta změna projeví u obou objektů
 ![image](https://github.com/user-attachments/assets/14193df7-98f3-47be-aa7d-6c108a462a94) <br />
 pokud budu měnit adresu tak se ta změna projeví pouze u prvního objektu
+
+#### Spring kontejnery
+
+je to základní prvek springu a slouží k řízení životního cyklu objektů v aplikaci. Kontejner se stará o vytvoření, konfiguraci a správu instancí beanů.
+
+jsou 2 typy kontejnerů
+
+- BeanFactory
+
+  Základní rozhraní pro Spring kontejnery. Vhodný pro jednoduché aplikace, kde není potřeba to nějak moc řešit
+- ApplicationContext
+
+  Upgraded verze BeanFactory, která má rozšíření a je nejvíc používanej kontejner ve Spring aplikacích
+
+Spring kontejnery nevytváří objekty přímo ve třídách (nebo správu) ale poskytuje závislosti (beany) třídám
+#### Bean scopes
+
+je jich 5, ty 2 nejdůležitější jsou singleton a prototype
+
+- Singleton
+
+  Pouze jeden/ Spring kontejner, defaultní inicializuje se během inicializace projektu
+  
+  třeba @Service anotace nad třídou
+- Prototype
+
+  novej bean je vytvořenej pro každej request nebo referenci, čeká na get bean
+
+  používá se když je potřeba aby každá komponenta měla vlastní instanci beanu
+
+  ```
+  @Scope("prototype")
+  @Component
+  public class myPrototype () {}
+  ```
+- Request
+
+  novej bean pro každej servlet request ale pokud to je během toho requestu tak tam bude jen jeden
+
+  Používá se pokud každý HTTP request potřebuje vlastní instanci beanu, třeba data specifický pro danej request
+
+  označuje se obdoně jako prototype jen místo "prototype" se píše "request"
+- Session
+
+  novej bean pro každej session
+
+  Používá se pro beany, který maj stav, který je potřeba uchovat během celý sessiony uživatele (login informace např.)
+
+  @Scope("session")
+- Global session
+
+novej bean pro každej HTTP session
+
+využívá se třeba v enterprise aplikacích
+
+@Scope("globalSession")
+
+#### Spring profily
+
+v podstatě se jedná o nějakej config soubor a když vytvoříš novej například application-test.properties a pak nastavíš aby se tyhle properties použily tak se to při startu změní
+
+test je název toho profilu
+```
+potřeba napsat
+spring.profiles.active: test //v tomhle případě
+```
+lze mít několik aktivních profilů ty další přepisou ten původní (vždycky se používá ten poslední definovanej)
+dá se přepsat aktivní profil v command line
