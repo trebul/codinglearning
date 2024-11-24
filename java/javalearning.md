@@ -379,3 +379,15 @@ dá se přepsat aktivní profil v command line
 u tříd se dá definovat profil u kterejch se to používá (např databáze pro produkci a testování)
 
 @Profile("test") třeba (pokud to není specifikovaný tak se použije defaultní)
+
+#### Garbage collector
+
+Java naštěstí tohle dělá sama o sobě, v podstatě jde o to, že pokud by to Java nedělala tak by se nakupily objekty a došla by paměť </br>
+V podstatě to hledá objekty, ke kterejm se už nedá se dostat protože např. už neexistuje pointer na to kde ten objekt je, takže garbage collector jde a smaže ten objekt </br>
+Java má víc jak jeden garbage collector ale vždy se používá jen jeden </br>
+při běhu programu se provádí tzv mark and sweep kde garbage collector projede paměť a hledá objekty, na který už není žádná reference a ty maže </br>
+jsou 2 různý heapy (viz stack and heap) tzv young gen a old gen, v old genu jsou objekty který se používaj dlouhodobě zatímco v young gen jsou krátkodobý objekty
+
+#### Stack and Heap
+
+ve stacku jsou metody, proměnný atd a je to vždy lifo pořadí tzn že pokud tam mám 2 věci tak se musí vždy vzít ta druhá
