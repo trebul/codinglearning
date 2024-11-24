@@ -390,4 +390,16 @@ jsou 2 různý heapy (viz stack and heap) tzv young gen a old gen, v old genu js
 
 #### Stack and Heap
 
-ve stacku jsou metody, proměnný atd a je to vždy lifo pořadí tzn že pokud tam mám 2 věci tak se musí vždy vzít ta druhá
+stack se používá na ukládání všech volání funkcí a lolálních proměnných </br>
+ve stacku je něco čemu se říká stack-frame a to je nějaká alokovaná paměť (určuje OS) ve který jsou nějaký metody a lokální proměnný (třeba pokud mám metodu na sečtení 2 čísel tak mám obě čísla v tom stack-framu) </br>
+nejdřív executuje stack-frame kterej byl zavolanej jako poslední </br>
+pokud daná metoda dojede tak se to z toho stacku smaže a jde se na další stack-frame </br>
+může se stát že nám ve stacku dojde paměť a pak dojde k přetečení stacku (stack overflow) nemůže se paměť alokovaná stacku zvětšit pokud program už běží</br>
+
+oproti tomu heap nemá předem alokovanou paměť (size), takže se říká že to je free pool of memory
+
+heap je taky zvanej jako dynamická paměť
+jsou tam uložený všechny objekty a jejich instance proměnný 
+
+heap je rozdělenej do několika oblastí podle typu garbage collectora. V C se tohle musí managovat zatímco v Javě se to managuje samo
+##### je důležitý že stack a heap jsou rozdílný podle toho o jakým jazyce se bavíme (tj C a Java fungujou úplně jinak)
