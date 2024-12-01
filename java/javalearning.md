@@ -441,3 +441,23 @@ v podstatě injectuju dependency přes setter na tu danou classu, je potřeba po
     }
 ```
 používá se to v případě kdy je potřeba daná classa pouze v jednom místě
+
+
+#### SOLID
+
+- Single responsibility
+to znamená že každá classa by měla mít pouze 1 zodpovědnost</br>
+např v classe pro lidi nebudu mít zvířata
+
+- Open for extension, closed for modification
+to znamená že by třídy měly mít možnost něco do nich přidat ale ne je upravovat
+
+- Liskov substitution
+to znamená, že pokud třída A je typem třídy B tak by mělo bejt možný nahradit B s A aniž by se nějak rozbila funkcionalita</br>
+třeba pokud mám automat na kopečkovou zmrzlinu a najednou budu chtít přidat kelímkovou tak to přestane fungovat protože nemá kelímky, takže to porušuje tohle pravidlo a musí se to přepsat
+
+- Interface Segregation
+to znamená, že by se nějaký velký interfacy měly rozdělit na několik menších. Tím se classy, který implementujou ty interfacy nemusí zajímat o metody, který nepoužívaj
+
+- Dependency Inversion
+to znamená, že by vyšší vrsty modulu neměly záviset na nižších vrstvách, třeba @Controller by neměl bejt rovnou závislej na repozitáři. </br>
