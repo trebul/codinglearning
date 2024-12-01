@@ -51,6 +51,7 @@ tldr imagine máš zase transakci A a B a transakce a čte data z tabulky produc
 Nastává, když během transakce jsou přidány nebo odebrány záznamy ze stejné tabulky kterou transakce používají </br>
 Například u transakce A čtu z tabulky objednávek a v transakci B insertnu to tabulky objednávek </br>
 pokud transakci B commitnu tak pak uvidím nový záznam v transakci A (to je ten phantom)
+
 - Serialization anomaly
 mám například transakci A a B </br>
 transakce A čte data z objednávek, které mají status X </br>
