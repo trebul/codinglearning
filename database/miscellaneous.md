@@ -65,8 +65,3 @@ pokud bych commitnul A dřív než B tak uvidím novej insert v B a obráceně
 takhle to generally funguje pro všechny databáze ale každá ne každá to implementuje stejně </br>
 u MySQL je defaultní repeatable read </br>
 u PostreSQL je defaultní read commited
-
-- Repeatable read
-
-
-- 
