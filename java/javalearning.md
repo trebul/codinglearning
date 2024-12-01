@@ -150,6 +150,9 @@ pro třídy, které komunikují s databází
 na zpracování a vyřizování requestů
 - @Autowired
 slouží na injectnutí Beanu do classy
+- @ControllerAdvice
+slouží na handlování vyjímek pokud máš třeba několik controllerů který každej dělá něco jinýho, takže tohle prochází všechny controllery a hledá jakýkoliv chyby. </br>
+tyto chyby pak předá metodám které mají anotaci ExceptionHandler
 
 Tyhle anotace se používaj aby se to pak dalo injectit tam kam je potřeba, právě přes další anotaci.
 #### Inject
