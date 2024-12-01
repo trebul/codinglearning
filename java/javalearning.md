@@ -403,3 +403,38 @@ jsou tam uložený všechny objekty a jejich instance proměnný
 
 heap je rozdělenej do několika oblastí podle typu garbage collectora. V C se tohle musí managovat zatímco v Javě se to managuje samo
 ##### je důležitý že stack a heap jsou rozdílný podle toho o jakým jazyce se bavíme (tj C a Java fungujou úplně jinak)
+
+#### Způsoby injectování dependencies
+dependency injection je v podstatě to, že třeba pro vytvoření objektu škola potřebuju objekt učitel apod, jinými slovy je škola závislá na učitelích
+
+jsou 3 základní typy
+
+- Constructor injection
+
+```
+    public Schedule(int id, String schoolYear, @NotNull List<Subject> subject, @NotNull Classroom classroom) {
+        this.id = id;
+        this.schoolYear = schoolYear;
+        Subject = subject;
+        this.classroom = classroom;
+    }
+```
+jelikož v tom konstruktoru mám jinou třídu tak to tam do toho injectím dependency na třídu subject a třídu classroom</br>
+takže v tenhle moment nemůžu vytvořit schedule bez třídy a bez předmětu
+- Property injection
+
+```
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
+    }
+```
+v podstatě injectuju dependency přes setter na tu danou classu, je potřeba použít @Autowired
+- Method injection
+
+```
+    public void displaySchedule(@AutoWired List<Subject> subjects,@Autowired Classroom classroom) {
+        System.out.println("Subjects: " + subjects);
+        System.out.println("Classroom: " + classroom);
+    }
+```
+používá se to v případě kdy je potřeba daná classa pouze v jednom místě
