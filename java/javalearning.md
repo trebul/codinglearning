@@ -461,3 +461,15 @@ to znamená, že by se nějaký velký interfacy měly rozdělit na několik men
 
 - Dependency Inversion
 to znamená, že by vyšší vrsty modulu neměly záviset na nižších vrstvách, třeba @Controller by neměl bejt rovnou závislej na repozitáři. </br>
+
+#### Abstraktní třídy
+je to třída ze který nejde dělat instance ale dá se z ní extendid
+
+dá se taky udělat abstraktní metody který fungujou podobně a dělá se to aby to bylo uspořádaný
+
+nicméně metody v abstraktní třídě nemusej bejt abstraktní
+
+##### rozdíl oproti interface
+rozdíl je v tom, že v interface se předpokládá že všechny metody jsou abstraktní a používá se implements a můžeš implementovat X interfaců ale jen 1 abstraktní třídu a jde dělat oboje
+
+proměnný v interface jsou public static
