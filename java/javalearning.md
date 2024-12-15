@@ -187,6 +187,7 @@ public class Ishmoz {
 class Ishmoz {
 }
 ```
+každá classa sama o sobě extendí speciální java classu. Ta se jmenuje Object a je v java.lang package
 
 - Encapsulation
 
