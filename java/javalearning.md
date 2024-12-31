@@ -474,3 +474,22 @@ nicméně metody v abstraktní třídě nemusej bejt abstraktní
 rozdíl je v tom, že v interface se předpokládá že všechny metody jsou abstraktní a používá se implements a můžeš implementovat X interfaců ale jen 1 abstraktní třídu a jde dělat oboje
 
 proměnný v interface jsou public static
+
+#### The Record type
+součástí javy od JDK 16, replacement pro POJO a je to speciální třída která obsahuje data, který se nikdy nebudou měnit <br/>
+obsahuje pouze fundamentální metody jako konstruktory a gettery
+
+```
+public record student(String id, String name, String lastname, int age) {
+
+}
+
+```
+pro každej parametr v hlavičce java generuje proměnnou s generovaným typem proměnný a každá proměnná je `private final` taky se tomu říká component field(?) <br/>
+mimo jiné taky java generuje accessory pro každou proměnnou ale nemá to prefixy jako třeba get <br/>
+takže je to prostě id() pokud chci getnout idčko objektu. Nedá se to setovat jelikož je to fixed hodnota
+
+#### StringBuilder
+na rozdíl od Stringu to nevytváří novej objekt v heapu jako String
+![image](https://github.com/user-attachments/assets/be18f1e2-e58e-49e1-ab2f-8a3cc83e00a9) <br/>
+StringBuilder pouze vrací referenci sám na sebe
