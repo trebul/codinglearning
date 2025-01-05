@@ -493,3 +493,10 @@ takže je to prostě id() pokud chci getnout idčko objektu. Nedá se to setovat
 na rozdíl od Stringu to nevytváří novej objekt v heapu jako String
 ![image](https://github.com/user-attachments/assets/be18f1e2-e58e-49e1-ab2f-8a3cc83e00a9) <br/>
 StringBuilder pouze vrací referenci sám na sebe
+
+má base kapacitu 16 a pokud to nadefinuju s nějakým stringem tak je to 16 + délka toho stringu
+```
+StringBuffer buffer = new StringBuffer(); //takže tohle je 16
+StringBuffer sb = new StringBuffer("lubert");//tohle je 22
+sb.append(" martin"); //přidá string
+```
