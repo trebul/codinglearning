@@ -67,3 +67,41 @@ důvod proč to dělat je protože se to rychle dá napsat a snadno se to reusuj
 dá se je enablovat nebo disablovat
 
 nejpopulárnější knihovny jsou spring a aspectJ s tím že aspectJ funguje se springem
+
+#### OOP principy
+
+jsou 4 základní pilíře
+- Abstrakce
+
+hlavním konceptem je ukazovat uživateli jen to co je nezbytné
+
+příklad - pokud mám třeba dálkový ovladač od tv tak uživatel nepotřebuje vědět jak přesně to funguje uvnitř
+
+stačí jen přepínání kanálů a ovládání hlasitosti
+
+- Dědičnost
+
+hlavním konceptem je možnost znovu používat kód, díky tomu se redukuje duplicita a vytváření specializovaných tříd
+
+příklad - pracuju na videohře a chci přidat nepřátele a všichni mají například funkci talk
+
+tak můžu vytvořit třídu nepřítel a ta bude mít funkci talk a pak jen dědím tuhle třídu pro všechny typy nepřátel a případně upravuju co ta funkce vrací
+
+- Polymorfismus
+
+hlavní koncept je možnost určit průběh funkce za běhu programu
+
+lze použít rodičovskou třídu na volání děděných metod
+
+```
+//příklad z nepřítele u dědičnosti
+Enemy enemy = new Vampire();
+```
+
+- Zapouzdření
+
+hlavním konceptem je skyrtí dat a řízený přístup k vlastnostem objektu
+
+používaj se modifikátory přístupu (private)
+
+implementace getterů a setterů - tím se zajistí ochrana vnitřního stavu objektu
