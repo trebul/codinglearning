@@ -500,3 +500,19 @@ StringBuffer buffer = new StringBuffer(); //takže tohle je 16
 StringBuffer sb = new StringBuffer("lubert");//tohle je 22
 sb.append(" martin"); //přidá string
 ```
+
+#### Spring Cloud
+
+Jedná se o modul který poskytuje RAD (Rapid Application Development) fíčuru pro Spring framework. Díky tomu se dá rychle vyvíjet cloudové aplikace s pomocí spring frameworku.
+
+Hlavní funkce Spring Cloudu: 
+- Service Discovery automatické zajištťování a registrace služeb v systému
+- Externí konfigurace centrální správa konfigurace pro více služek
+- Vyvažování zátěže distribuce provozu mezi instancemi služeb
+- Komunikace mezi službami zjednodušená komunikace přes REST
+- Circuit breaker ochrana před výpadky v distribuovaném systému
+- API Gateway správa provozu a směrování ke službám
+- Zabezpečení integrace s OAuth2, jwt apod
+- Distribuované trasování sledování a analýza toků mezi službami
+
+
