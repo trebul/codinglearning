@@ -90,3 +90,12 @@ bere ResultHandler a vykoná cokoliv mu requestne, tady třeba print nebo log
 bere ResultMatcher a porovná to co vrátil request s tím co se očekává 
 - andReturn() <br />
 vrací MvcResult jako objekt kterej obsahuje data, který vrátil ten request
+
+#### Contract Testy
+jedná se o typ testů které ověřují zda služby dodržují "kontrakt", ten definuje jak by měla vypadat komunikace mezi službami, například formát requestů a responsí, HTTP metody a headery nebo stavové kódy (200,400,...)
+
+používají se v mikroslužbových architekturách, kde je důležité zajistit, že změny v jedné službě nezpůsobí problémy v jiných službách.
+
+Používají se protože umožňují developerům pracovat na jedné službě aniž by museli znát detaily implementace jiných služeb. Navíc zajišťují, že služby spolu mohou komunikovat i když jsou vyvíjeny nezávisle.
+
+Na Contract testy se například používá Pact, Spring Cloud Contract nebo OpenAPI.
