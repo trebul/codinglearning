@@ -87,7 +87,37 @@ if(str.isPresent()){
 }
 //tohle printne je tu protože str = hello	
 ```
+#### Multidimensionální pole
+```
+int [][] array = {{1,3},
+		  {11,22},
+		  {33,44}};
+```
+jedná se o matici která obsahuje hodnoty v řádcích a sloupcích
 
+pole se taky dá inicializovat i bez definování hodnot
+```
+int[][] pole = new int[3][3];
+```
+![image](https://github.com/user-attachments/assets/f076015d-e4f9-4931-a527-0ab72c871562)
+
+
+takhle pak vypadá matice o velikosti 3x3, nicméně není nutné definovat velikost vnořených polí
+
+pro accessování hodnot se pak používá například
+```
+pole[0][1] = 5;
+```
+takže pro procházení multidimensionálního pole je pak potřeba používat dvojitý for loop
+```
+for(int o = 0;o<pole.length;o++){
+for(int j = 0;j<pole.length;j++) {
+system.out.println(pole[o][j] + " ");
+}
+}
+```
+
+tohle všechno platí samozřejmě i pro pole, které mají více dimenzí nemusí to nutně být jen 2 dimenze, jen se tam přidá další [] a je to
 #### Switch
 ve switchi nelze používat long, float, double nebo boolean
 fall through:
