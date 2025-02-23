@@ -92,9 +92,21 @@ bere ResultMatcher a porovná to co vrátil request s tím co se očekává
 vrací MvcResult jako objekt kterej obsahuje data, který vrátil ten request
 
 #### Contract Testy
-jedná se o typ testů které ověřují zda služby dodržují "kontrakt", ten definuje jak by měla vypadat komunikace mezi službami, například formát requestů a responsí, HTTP metody a headery nebo stavové kódy (200,400,...)
+jedná se o typ testů které ověřují zda služby dodržují "kontrakt", ten definuje jak by měla vypadat komunikace mezi službami nebo systémy, například formát requestů a responsí, HTTP metody a headery nebo stavové kódy (200,400,...)
+
+![image](https://github.com/user-attachments/assets/96429509-a771-4067-ab50-3704cf10fb26)
+
+nemusí to vždy být BE a FE tohle je jen příklad
 
 používají se v mikroslužbových architekturách, kde je důležité zajistit, že změny v jedné službě nezpůsobí problémy v jiných službách.
+
+jak vypadá contract:
+- interface: sada metod, funkcí nebo api endpointů, které jsou exposenuty servisou. Obsahuje jména, parametry a co to vrací
+- data formáty: definuje strukturu nebo typy posílaných dat, např JSON
+- předpoklady: podmínky, které musí být splněny než se cokoliv začne volat (autentikace apod)
+- postpodmínky: popsání očekávaného stavu po zavolání metod nebo funkcí a očekávané response
+- invarianty: pevně stanovená pravidla, která se nemění
+- handlování chyb
 
 Používají se protože umožňují developerům pracovat na jedné službě aniž by museli znát detaily implementace jiných služeb. Navíc zajišťují, že služby spolu mohou komunikovat i když jsou vyvíjeny nezávisle.
 
