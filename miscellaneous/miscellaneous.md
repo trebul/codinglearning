@@ -105,3 +105,38 @@ hlavním konceptem je skyrtí dat a řízený přístup k vlastnostem objektu
 používaj se modifikátory přístupu (private)
 
 implementace getterů a setterů - tím se zajistí ochrana vnitřního stavu objektu
+
+#### Microservisy
+je to styl, kde aplikace je rozdělena na malé, nezávislé služby na rozdíl od monolitického stylu kde je všechno součástí jednoho projektu
+
+jedná se například o autentikaci apod, kde spolu tyto služby komunikují přes api většinou REST api. Každá mikroslužba je samostatná jednotka, která má svou vlastní databázi.
+
+oproti monolitického stylu, kde je všechno součástí jednoho celku (a tím pádem těžší na úpravu) je jednodušší každou servisu spravovat zvlášť ovšem je pak zase těžší debugovat pokud se něco rozbije.
+
+každá servisa musí jít vyvíjet,testovat a používat samostatně
+
+celkem jsou 3 typy komunikace mezi microservisami
+
+- api
+![image](https://github.com/user-attachments/assets/59cdbcb1-1f5d-4940-bc65-6b4daef17ba9)
+- message broker
+![image](https://github.com/user-attachments/assets/fdb50323-e43f-41f1-820e-6e54e0b56dfe)
+- service mesh
+![image](https://github.com/user-attachments/assets/296be7cf-eaef-4ac8-8851-5edc3a685688)
+
+jelikož jsou microservisy nezávislé na sobě tak je lze vyvíjet v různých jazycích
+
+##### CI/CD pipeline
+jsou 2 možnosti
+
+- monorepo
+
+1 složka pro každou servisu v 1 repozitáři
+
+je to jednodušší pro code management a development
+
+jelikož jsou v 1 repozitáři tak jednodušší rozbít strukturu kde všechno má být nezávislé na sobě takže tam musí být další úpravy aby pipelina detekovala změny které by tohle narušily
+
+- polyrepo
+
+vytvoří se skupina ve které jsou repozitáře pro všechny repa pro tu aplikaci
