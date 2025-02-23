@@ -140,3 +140,26 @@ jelikož jsou v 1 repozitáři tak jednodušší rozbít strukturu kde všechno 
 - polyrepo
 
 vytvoří se skupina ve které jsou repozitáře pro všechny repa pro tu aplikaci
+
+
+#### Message Broker
+software komponenta, která umožňuje aplikacím vzájemně komunikovat pomocí výměny zpráv. Je to prostředník mezi odesílatelem a příjemcem zpráv, což usnadňuje asynchronní komunikaci a oddělení jednotlivých částí systému.
+
+Hlavní funkce:
+- Asynchronní komunikace odesílatel nemusí čekat na odpověď pro příjemce
+- ukládání zpráv, lze je dočasně uložit dokud příjemce nepříjme zprávu
+
+Message brokeři jsou například Apache Kafka, RabbitMQ, Amazon SQS apod.
+
+Používají se k asynchronní komunikaci mezi mikroservisy
+
+##### Výhody
+- příjemce a odesílatel se nemusí znát
+- zprávy jsou uloženy v případě selhání
+- dá se jednoduše scalovat
+- asynchronní
+
+##### Nevýhody
+- složitost
+- přidává latenci a zvyšuje režii
+- vyžadují správu a údržbu
