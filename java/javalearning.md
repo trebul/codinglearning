@@ -533,21 +533,22 @@ sb.append(" martin"); //přidá string
 
 #### Spring Cloud
 
-Jedná se o modul který poskytuje RAD (Rapid Application Development) fíčuru pro Spring framework. Díky tomu se dá rychle vyvíjet cloudové aplikace s pomocí spring frameworku.
+Spring Cloud je sada nástrojů a knihoven, které se používají ve vývoji distribuovaných systémů a mikroslužeb.
 
-Hlavní funkce Spring Cloudu: 
-- Service Discovery automatické zajištťování a registrace služeb v systému
-- Externí konfigurace centrální správa konfigurace pro více služek
-- Vyvažování zátěže distribuce provozu mezi instancemi služeb
-- Komunikace mezi službami zjednodušená komunikace přes REST
-- Circuit breaker ochrana před výpadky v distribuovaném systému
-- API Gateway správa provozu a směrování ke službám
-- Zabezpečení integrace s OAuth2, jwt apod
-- Distribuované trasování sledování a analýza toků mezi službami
-- Centralizovaný monitoring: Možnost monitorovat výkon a stav aplikací a služeb pomocí nástrojů jako Actuator a možnost integrace s nástroji pro sledování v reálném čase.
-- Podpora pro mikroslužby: Spring Cloud poskytuje nástroje pro snadnou implementaci a správu mikroslužební architektury, včetně podpory pro různé vzory komunikace mezi službami.
-- Podpora pro různé cloudové platformy: Integrace a podpora pro různé cloudové platformy a poskytovatele infrastruktury, jako je AWS, Azure, Google Cloud, atd.
-- Resilience Engineering: Kromě Circuit Breakerů může Spring Cloud nabídnout další nástroje pro zajištění odolnosti a robustnosti aplikací v distribuovaném prostředí.
-- Elastic Load Balancing: Schopnost dynamicky škálovat aplikace a služby podle aktuální zátěže a požadavků.
-- DevOps integrace: Možnosti integrace s nástroji pro automatizaci nasazení, CI/CD pipeline a další nástroje pro podporu DevOps praktik.
+skládá se z:
+- Spring Cloud Config - správa konfigurace pro mikroservices
+- Spring Cloud Netflix - integrace s nástroji netflix OSS
+- Spring CLoud Stream - zpracování zpráv a integrace s message brokery
+- Spring Cloud Bus - propojení aplikací a šíření aktualizací konfigurace
+- Spring Cloud Security - zabezepčení mikroslužeb a správa autentikace/authorizace
 
+##### Výhody
+- lze používat pouze potřebné komponenty
+- snadná integrace s dalšími nástroji Spring
+- optimalizováno pro provoz v cloudu
+
+##### Nevýhody 
+- nevhodný pro malé projekty jelikož je navržen na velké robustní projekty
+- výkon: zvyšují režii aplikace
+- složitost konfigurace
+- závislost na externích službách
