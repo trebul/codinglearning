@@ -42,7 +42,7 @@ public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
   scanner.nextLine();
   ```
 #### :: syntaxe
-od javy 8 se dá referencovat metody přes :: místo volání. Je to pro lambda výrazy
+od javy 8 se dá referencovat metody přes :: místo volání. Je to pro lambda výrazy, musí to být void metoda (nemá return)
 ```
 //představ si že máš metodu
 public void print(String message) {
@@ -57,7 +57,44 @@ list.forEach(message -> obj.print(message));//volám metodu nad každým prvkem 
 List<String> list = Arrays.asList("A", "B", "C");
 list.forEach(obj::print); //takhle to ví že nad každým prvkem to má použít metodu print aniž bych musel psát něco dalšího
 ```
-### lambda výrazy
+#### Novinky ve verzi 22
+1. nově jde používat "unnamed" proměnné
+
+nejde je volat a nic s nima dělat
+
+use case - třeba dát do catche pokud nepotřebuju vrátit tu danou chybu
+```
+Person _ = new Person(); //tohle je teď valid nebo
+Person  = new Person();
+
+catch(Exception _) {}
+
+List<ječná> debilci = new List.of(new Zak(), new Zak());
+debilci.forEach(_ -> System.out.println("debílek");
+```
+
+2. lze v command lině volat multiprogramový soubory
+
+> basically týpek řekl že se dá spustit v commandlině soubor
+```
+java soubor.java
+
+ovšem pokud v soubor.java referencuju jinej soubor tak by to nefungovalo
+což teď ale funguje
+```
+
+3. String templating - tohle je jen preview
+```
+//example jak to funguje teď
+String name = "Karel";
+int age = 26;
+
+String msg = "Ahoj já jsem " + name + " mám rád rajčata a je mi " + age;
+
+//String templating
+String msg = STR."Ahoj já jsem \{name} mám rád rajčata a je mi \{age}";
+```
+#### lambda výrazy
 v podstatě 
 parameter -> expression
 výrazy jsou limitované = musí hned vracet hodnotu, nemůžou obsahovat ify/fory apod.
